@@ -87,6 +87,12 @@
 	padding: 80px 25px;
   
   }
+
+  #welcome-text
+  {
+    padding-top:20%;
+    align-items: left;
+  }
   
   
   
