@@ -77,8 +77,8 @@
   #welcome-section
   {
 	display: block;
-    background: url(portfolio/outline-removebg.png) no-repeat right center fixed;   
-    
+    background: url(portfolio/outline-removebg.png) no-repeat right right fixed;   
+
 	background-size: cover;
    width: 100%;
 	height: 100%;  
