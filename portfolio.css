@@ -1,0 +1,237 @@
+* {
+	box-sizing: border-box;
+  
+	/* Set font size for easy rem calculations
+	 * default document font size = 16px, 1rem = 16px, 100% = 16px
+	 * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+	*/
+	 margin: 0;
+	padding: -5px;
+	scroll-behavior: smooth;
+  }
+  
+  body,h1,h2,h3,h4,h5,h6 
+  {
+	font-family: "Raleway", sans-serif;  
+  }
+  
+  
+  body, html {
+	height: 100%;
+	line-height: 1.8;
+  }
+  
+  a
+  {
+	text-decoration: none;
+  }
+  
+  /* Full height image header */
+  .bgimg-1 {
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
+  }
+  
+  .w3-bar .w3-button {
+	padding: 16px;
+  }
+  
+  #navbar {
+  /*   display:flex; */
+	width: 100%;
+	background-color: #25274d;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	color: white;
+	font-family: sans-serif;
+	margin-bottom: 5px;
+  }
+  
+  #navbar a {
+	float: right;
+	font-size: 16px;
+	color: #ebecf5;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+  }
+  
+  #navbar a:hover, a:hover {
+	color: #2dbbf7;
+  }
+  
+  .active {
+	background-color: #221753;
+  }
+  
+  @media screen and (max-width: 500px) {
+	#navbar a {
+	  float: none;
+	  display: block;
+	}
+  }
+  
+  #welcome-section
+  {
+	display: block;
+    background: url(portfolio/outline-removebg.png) no-repeat center center fixed;   
+	background-size: cover;
+   width: 100%;
+	height: 100%;  
+	color: #25274d;
+	text-align:left;
+	background-color: #ebecf5;
+	padding: 80px 25px;
+  
+  }
+  
+  
+  
+  #intro
+  {
+	color: #ebecf5;
+	text-align:center;
+	background-color: #3b3f87;
+	padding: 150px 25px;
+	display: block;
+	max-width:100%;
+	 width: 100%;
+	height: 100%;  
+  /*   height: auto; */
+  }
+  
+  #par2
+  {
+	padding-top: 20px;
+  }
+  #projects
+  {
+	color: #25274d;
+	text-align: center;
+	background-color: #ebecf5;
+	padding: 20px 15px;
+  /*   display: block; */
+  /*   max-width:100%; */
+	height: auto;
+	
+  }
+  
+  .contact-section
+  {
+	
+	  display: block;
+  /*   background: linear-gradient(
+		60deg,
+		rgba(157,160,168, 0.3),
+		rgba(152,144,144, 0.1)
+	  ), url(https://4kwallpapers.com/images/wallpapers/coffee-laptop-5120x2880-13640.png) no-repeat center center fixed;    */
+	
+	background-size: cover;
+	max-width: 100%;
+	height: auto;  
+	color: #ebecf5;
+	text-align:center;
+	background-color: #3b3f87;
+	padding: 150px 25px;
+	
+  /*   color:white;
+	text-align:center;
+	background-color: black;
+	padding-top: auto;
+  /*   margin-left: 0px; 
+	display: block;
+	width: 100%;
+	height: 100%; */
+  }
+  
+  #contact-detl
+  {
+	padding-top: 100%;
+  }
+  
+  .social
+  {
+	padding-top: 10%;
+			  font-size: 45px;
+  
+  }
+  
+  
+  /* Projects section */
+  
+  .project-section {
+	text-align: center;
+	padding: 10rem 2rem;
+	background: var(--main-blue);
+  }
+  
+  .project-section-header {
+  /*   max-width: 640px; */
+	  padding: 2rem 0.5rem;
+	border-bottom: 0.2rem solid var(--main-white);
+  
+  }
+  
+  @media (max-width: 28.75em) {
+	.project-section-header {
+	  font-size: 5rem;
+	}
+  }
+  
+  /* "Automagic" image grid using no media queries */
+  .projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	grid-gap: 4rem;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
+	margin-bottom: 6rem;
+  }
+  
+  @media (max-width: 30.625em) {
+	.project-section {
+	  padding: 6rem 1rem;
+	}
+  
+	.projects-grid {
+	  grid-template-columns: 1fr;
+	}
+  }
+  
+  .project {
+	background: #3b3f87;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+	color: #ebecf5;
+  }
+  
+  .proj-link {
+	color: var(--main-gray);
+	transition: color 0.3s ease-out;
+  }
+  
+  .project:hover .proj-link {
+	color: #ff7f50;
+  }
+  
+  .project-img {
+	height: calc(100% - 6.8rem);
+	width: 100%;
+	object-fit: cover;
+  }
+  
+  .project-title {
+	font-size: 20px;
+	padding: 2rem 0.5rem;
+  }
+  
+  
+  
+		  .container-footer {
+		text-align: center;
+			  padding: 20px 50px;
+		  }
