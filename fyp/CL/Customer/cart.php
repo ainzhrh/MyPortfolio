@@ -1,0 +1,200 @@
+<!-- include('../config/connection.php');
+//include('cust-nav.php');
+
+// Initialize the session
+
+  session_start();
+  if(isset($_SESSION['customer']))
+  {
+
+?>
+  
+ if(isset($_GET["action"]))  
+ {  
+      if($_GET["action"] == "delete")  
+      {  
+           foreach($_SESSION["shopping_cart"] as $keys => $values)  
+           {  
+                if($values["item_id"] == $_GET["id"])  
+                {  
+                     unset($_SESSION["shopping_cart"][$keys]);  
+                     echo '<script>alert("Item Removed")</script>';  
+                     echo '<script>window.location="cart.php"</script>';  
+                }  
+           }  
+      }  
+ }  
+ ?>   -->
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Cart</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> 
+
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+           <style type="text/css">
+                textarea
+                {
+                    resize: none;
+                    color: black;
+
+                }
+
+                input
+                {
+                    border: none;
+                    width: 250px;
+
+                }
+           </style>
+
+           <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Coffeeloca</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="home.php"><span class="glyphicon glyphicon-home"> Home</a></li>
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="menu.php">All</a></li>
+          <li><a href="menu-pasta.php">Pasta</a></li>
+          <li><a href="menu-asiancuisine.php">Asian Cuisine</a></li>
+          <li><a href="menu-beverages.php">Beverages</a></li>
+        </ul>
+<!-- 
+        $count=0;
+        if (isset($_SESSION['shopping_cart']))
+        {
+
+          $count=count($_SESSION['shopping_cart']);
+        }
+
+
+         ?> -->
+        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart ( echo $count;?>)</a></li>
+        
+      </li>
+     
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="account.php">Profile</a></li>
+          <li class=""><a href="history.php">Order History</a></li>
+     
+        </ul>
+      </li>
+        <li><a href="logout.php" onClick="return confirm('Are you sure?')">
+          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+         
+      </head>  
+      <body>  
+           <br />  
+           <div class="container" style="width:700px;">  
+                <h3 align="center">Cart</h3><br />  
+                <!-- $query = "SELECT * FROM product ORDER BY ProductID ASC";  
+                $result = mysqli_query($conn, $query);  
+                if(mysqli_num_rows($result) > 0)  
+                {  
+                     while($row = mysqli_fetch_array($result))  
+                     {  
+                ?>  
+              -->
+          
+                ?>  
+                <div style="clear:both"></div>  
+                <br />  
+                <h3>Order Details</h3>
+
+               
+                <div class="table-responsive">  
+                     <table class="table table-bordered">  
+                          <tr>
+                               <th width="10%">ID</th>  
+                               <th width="40%">Product Name</th>  
+                               <th width="10%">Quantity</th>  
+                               <th width="20%">Price</th>  
+                               <th width="15%">Total</th>  
+                               <th width="5%">Action</th>  
+                          </tr>  
+                          <!-- if(!empty($_SESSION["shopping_cart"]))  
+                          {  
+                               $total = 0;  
+                               foreach($_SESSION["shopping_cart"] as $keys => $values)  
+                               {  
+                          ?>   -->
+                          <tr>
+                               <form method="post" action="purchase.php">
+                               <td> echo $values["item_id"]; ?></td>  
+                               <td>echo $values["item_name"]; ?></td>  
+                               <td>echo $values["item_quantity"]; ?></td>  
+                               <td>RM  echo $values["item_price"]; ?></td>  
+                               <td>RM  echo number_format($values["item_quantity"]*$values["item_price"], 2); ?></td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Remove</span></a></td>  
+                          </tr>  
+                      
+                                    <!-- $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+                               }  
+                          ?>   -->
+                          <tr>  
+                               <td colspan="4" align="right">Total</td>  
+                               <td align="right">RM  echo number_format($total, 2); </td>  
+                               <td></td>  
+                          </tr>  
+                      
+                     </table>  
+                </div>
+                 
+                <br>
+                <h3>Delivery Details</h3>
+              
+<!-- 
+               $cust = mysqli_query($conn, "SELECT * FROM customer WHERE email='".$_SESSION["customer"]."'");
+               $row=mysqli_fetch_array($cust);
+
+                           ?>  -->
+                   
+                    <form method="post" action="cart.php">
+                <div>
+                    <label value="" readonly>Name : </label>
+                    <input type="text" name="CustName" value="" hidden/>
+                     <input type="text" name="CustName" value="" readonly/>
+                    
+                     <br>
+                     <label>Address: <textarea type="text" name="Address" rows="3" cols="30" value="3" required></textarea></label>
+                     <br>
+                    <!--  <label>Delivery Method: <input type="text" name="Delivery Method" value="<?php //echo $acc_fetch['method']?>" /></label> --> 
+                </div>
+                <button type="submit" name="purchase">Order</button> 
+                </form> 
+       
+       </form>
+                
+           </div>
+
+           <div align="center"> 
+          
+           </div> 
+           <br />  
+      </body>  
+ </html>
+

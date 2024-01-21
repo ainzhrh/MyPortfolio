@@ -1,0 +1,264 @@
+
+<!-- //Include database connfig
+include('config/connection.php');
+
+//Initiate new sessions
+session_start();
+
+//Sets the notifications to null as default
+$error = null;
+
+
+//Login submission
+if (isset($_POST['submitlogin']))
+{
+  $user = $_POST["email"];
+  $pwd = $_POST["password"];
+  
+  //Check if logged in user is client
+  $user_query = mysqli_query($conn, "SELECT email,CPassword,CustID,CustName FROM customer WHERE email = '$user'");
+  $user_row = mysqli_fetch_assoc($user_query);
+  $user_result = mysqli_num_rows($user_query); 
+  
+  
+  if ($user_result == 1)
+  {$custid = $user_row['CustID']; 
+    if ($user_row['CPassword'] == $pwd)
+    {
+    
+      $_SESSION['customer'] = $user;
+      $_SESSION['CustID'] = $custid;
+      session_write_close();
+      echo '<script language="javascript">';
+      echo 'alert("Welcome '.$user_row['CustName'].'!");';
+      echo 'window.location.href="Customer/home.php"';
+      echo '</script>';
+
+    }
+    else 
+    {
+      echo '<script language="javascript">';  
+      echo 'alert("Oops, your credentials are incorrect. Please try again");';
+      echo 'window.location.href="login.php"';
+      echo '</script>';
+    }
+  }
+
+  else if ($user_result == 0) 
+  {
+    //Check if logged in user is staff
+    $staff_query = mysqli_query($conn, "SELECT SName,SEmail,SPassword,SPosition FROM staff WHERE SEmail = '$user'");
+    $staff_row = mysqli_fetch_assoc($staff_query);
+    $staff_result = mysqli_num_rows($staff_query);
+
+
+ if ($staff_result == 1)
+   {
+     if ($staff_row['SPassword'] == $pwd)
+    {
+            $position = $staff_row['SPosition'];
+             if($position != 'Manager')
+              {
+             
+                $_SESSION['staff'] = $user;
+                 session_write_close();
+                 echo '<script language="javascript">';
+                 echo 'alert("Welcome '.$staff_row['SName'].'!");';
+                 echo 'window.location.href="Staff/home-staff.php"';
+                 echo '</script>';
+                }
+       
+             if($position == 'Manager')
+              {
+                $_SESSION['admin'] = $user;
+                 session_write_close();
+                 echo '<script language="javascript">';
+                 echo 'alert("Welcome '.$staff_row['SName'].'!");';
+                 echo 'window.location.href="Admin/dashboard.php"';                 echo 'window.location.href="Staff/home-staff.php"';
+
+                  echo '</script>';
+
+                }
+  
+    }
+
+    
+    else 
+    {
+    echo '<script language="javascript">';    
+    echo 'alert("Oops, your credentials are incorrect. Please try again");';
+    echo '</script>';
+    //$error = "Uh oh, you've entered an incorrect password.";
+    }
+  }
+  else {
+    echo '<script language="javascript">';    
+    echo 'alert("Oops, your credentials are not registered. Please register first");';
+    echo '</script>';
+}
+ 
+    //$error = "Uh oh, your username is not registered.";
+  }
+}
+  //  else {
+  //   echo '<script language="javascript">';    
+  //   echo 'alert("Oops, your credentials are not registered. Please register first");';
+  //   echo '</script>';
+  //   //$error = "Uh oh, your username is not registered.";
+  // }
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <style type="text/css">
+  body {
+  margin: 0;
+  padding: 0;
+  font-family : sans-serif;
+  font-size: 20px;
+  background: var(color-grey);
+  background-image: linear-gradient(
+      115deg,
+      rgba(157,160,168, 0.3),
+      rgba(168,108,108, 0.4)
+    ),
+    url(img/background.jpg);
+  background-size: cover;
+ 
+}
+
+.box
+{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 40px;
+  background-color: rgba(192,192,192,0.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.7);
+  border-radius: 10px;
+  
+}
+
+#title
+{ 
+  margin: 0px 0 20px;
+  padding: 0px 0;
+  color: black;
+  text-align: center;
+}
+
+#description {
+  font-family: Londrina Solid;
+  text-align: center;
+  font-style: italic;
+  padding: 5px;
+  color: #d7c9ac;
+   text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+
+.box .inputBox
+{
+  position: relative;
+}
+
+.box .inputBox input 
+{
+  width: 90%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+  
+}
+.box .inputBox label
+{
+  color: black;
+}
+
+button
+{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #4791d0;
+  margin: auto;
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+ button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    animation-fill-mode:forwards ;
+    
+  }
+  @keyframes background-color {
+    100% {
+      background-color: #03a9f4;
+    }
+  }
+
+  h3{
+    color: black;
+  }
+a 
+{
+  color: black; 
+  text-decoration: none;
+
+}
+
+</style>
+<link href="https://fonts.googleapis.com/css?family=Londrina+Solid" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="box">
+  <form id="survey-form" action="login.php"  method="POST" >
+    <h1 id="title">Login</h1>
+   <div class="inputBox">
+        <label>Email : </label>
+        <input type="text" name="email" required="required">
+        </div>
+    <div class="inputBox">
+        <label>Password : </label>
+        <input type="password" name="password" required="required">
+        </div>
+<br>
+    <div align="center">
+    <button class="button" type="submit" name="submitlogin" ><a href="Customer/home.php">Submit Customer</a></submit></button>
+    <button class="button" type="submit" name="submitlogin" ><a href="Admin/dashboard.php">Submit Admin</a></submit></button>
+    <button class="button" type="submit" name="submitlogin" ><a href="Staff/home-staff.php">Submit Staff</a></submit></button>
+
+  </div>
+
+<div align="center">
+      <h3>No account?</h3> <a href="register.php">Sign up now!</a>
+  </div>
+    </form>
+    
+</div>
+
+</body>
+</html>
+
+
+      <!-- <h1 id="title">Login</h1> -->
+   
+  
+      </main>
