@@ -103,13 +103,13 @@
                          <tr>
                              
 
-                         <td></td>
+                         <td>489FDFCDS65</td>
                              <!--  <td></td> -->
-                         <td></td>
+                             <td>Jusco Seremban 2 Shopping Centre 112 Persiaran S2 B1,<br> 22652 Selangor<br> Malaysia</td>
                              
-                         <td></td>
+                         <td>PENDING</td>
 
-                         <td>RM 25</td>
+                         <td>RM 78.00</td>
                          
                
 
@@ -146,17 +146,16 @@
 
                          <tr>
                              
-                         <td></td>
+                         <td>232323XNFJSHBR</td>
                          
-                         <td></td>
+                         <td>Chocolate Cake</td>
                          
-                         <td></td>
-
+                         <td>Jusco Seremban 2 Shopping Centre 112 Persiaran S2 B1,<br> 22652 Selangor<br> Malaysia</td>
                         <!--  <td></td>
                              
                          <td></td> -->
 
-                         <td></td>
+                         <td>DELIVERED</td>
 
                          <!-- <td><button onclick="location.href='details.php?id=">Details</button></td> -->
 

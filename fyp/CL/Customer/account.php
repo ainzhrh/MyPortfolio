@@ -63,7 +63,7 @@
         } -->
 
 
-        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> [echo $count;] Cart</a></li>
+        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (5)</a></li>
       </li>
       </ul>
       
@@ -76,7 +76,7 @@
           <li class=""><a href="history.php">Order History</a></li>
         </ul>
       </li>
-        <li><a href="logout.php" onClick="return confirm('Are you sure?')">
+      <li><a href="../login.php" onClick="return confirm('Are you sure?')">
           <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
@@ -116,7 +116,7 @@
                       <th>Name</th>
                     </tr>
                     <tr>
-                      <td>echo $profile['CustName']; </td>
+                      <td>John Doe</td>
                     </tr>
                     
                     <!-- tr>
@@ -130,20 +130,21 @@
                       <th>Phone No</th>
                     </tr>
                     <tr>
-                      <td>echo $profile['PhoneNo'];</td>
+                      <td>0123456789</td>
                     </tr>
                               
                     <tr>
                       <th>Address</th>
                     </tr>
                     <tr>
-                      <td>$profile['Address']; </td></tr>
+                      <td>Jusco Seremban 2 Shopping Centre 112 Persiaran S2 B1,<br> 22652 Selangor<br> Malaysia</td>
+                    </tr>
 
                     <tr>
                       <th>Email</th>
                     </tr>
                     <tr>
-                      <td>echo $profile['email']; </td></tr>
+                      <td>johndoe@mailnator.com</td></tr>
                     
                      
              

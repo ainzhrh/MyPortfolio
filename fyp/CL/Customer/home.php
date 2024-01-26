@@ -107,7 +107,7 @@ else {
 
 
          
-        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> [php echo $count;] Cart</a></li>
+        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (5)</a></li>
       </li>
       </ul>
       
@@ -121,7 +121,7 @@ else {
           <li class=""><a href="history.php">Order History</a></li>
         </ul>
       </li>
-        <li><a href="logout.php" onClick="return confirm('Are you sure?')">
+      <li><a href="../login.php" onClick="return confirm('Are you sure?')">
           <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>

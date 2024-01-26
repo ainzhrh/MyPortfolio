@@ -83,7 +83,7 @@
 
 
          ?> -->
-        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart ( echo $count;?>)</a></li>
+        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (5)</a></li>
         
       </li>
      
@@ -98,7 +98,7 @@
      
         </ul>
       </li>
-        <li><a href="logout.php" onClick="return confirm('Are you sure?')">
+      <li><a href="../login.php" onClick="return confirm('Are you sure?')">
           <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
@@ -120,7 +120,7 @@
                 ?>  
               -->
           
-                ?>  
+                
                 <div style="clear:both"></div>  
                 <br />  
                 <h3>Order Details</h3>
@@ -129,7 +129,7 @@
                 <div class="table-responsive">  
                      <table class="table table-bordered">  
                           <tr>
-                               <th width="10%">ID</th>  
+                               <!-- <th width="10%">ID</th>   -->
                                <th width="40%">Product Name</th>  
                                <th width="10%">Quantity</th>  
                                <th width="20%">Price</th>  
@@ -144,21 +144,55 @@
                           ?>   -->
                           <tr>
                                <form method="post" action="purchase.php">
-                               <td> echo $values["item_id"]; ?></td>  
-                               <td>echo $values["item_name"]; ?></td>  
-                               <td>echo $values["item_quantity"]; ?></td>  
-                               <td>RM  echo $values["item_price"]; ?></td>  
-                               <td>RM  echo number_format($values["item_quantity"]*$values["item_price"], 2); ?></td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Remove</span></a></td>  
+                               <!-- <td> echo $values["item_id"]; ?></td>   -->
+                               <td>Blackforest Whole</td>  
+                               <td>1</td>  
+                               <td>RM  78.00</td>  
+                               <td>RM  78.00</td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>  
-                      
-                                    <!-- $total = $total + ($values["item_quantity"] * $values["item_price"]);  
+                          <tr>
+                               <form method="post" action="purchase.php">
+                               <!-- <td> echo $values["item_id"]; ?></td>   -->
+                               <td>Aglio Olio w/ Prawn</td>  
+                               <td>1</td>  
+                               <td>RM  23.00</td>  
+                               <td>RM  23.00</td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                          </tr>                        
+                          <tr>
+                               <form method="post" action="purchase.php">
+                               <!-- <td> echo $values["item_id"]; ?></td>   -->
+                               <td>Americano</td>  
+                               <td>1</td>  
+                               <td>RM  7.00</td>  
+                               <td>RM  7.00</td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                          </tr>  
+                          <tr>
+                               <form method="post" action="purchase.php">
+                               <!-- <td> echo $values["item_id"]; ?></td>   -->
+                               <td>Blue Lagoon</td>  
+                               <td>1</td>  
+                               <td>RM  12.00</td>  
+                               <td>RM  12.00</td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                          </tr>                                                       
+                          <tr>
+                               <form method="post" action="purchase.php">
+                               <!-- <td> echo $values["item_id"]; ?></td>   -->
+                               <td>Salted Caramello</td>  
+                               <td>1</td>  
+                               <td>RM  16.00</td>  
+                               <td>RM  16.00</td>  
+                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                          </tr>                            
+                          <!-- $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                                }  
                           ?>   -->
                           <tr>  
                                <td colspan="4" align="right">Total</td>  
-                               <td align="right">RM  echo number_format($total, 2); </td>  
-                               <td></td>  
+                               <td align="right">RM  136.00 </td>  
                           </tr>  
                       
                      </table>  
@@ -177,7 +211,7 @@
                 <div>
                     <label value="" readonly>Name : </label>
                     <input type="text" name="CustName" value="" hidden/>
-                     <input type="text" name="CustName" value="" readonly/>
+                     <input type="text" name="CustName" value="Jane Doe" readonly/>
                     
                      <br>
                      <label>Address: <textarea type="text" name="Address" rows="3" cols="30" value="3" required></textarea></label>
