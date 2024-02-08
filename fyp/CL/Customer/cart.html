@@ -63,15 +63,15 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class=""><a href="home.php"><span class="glyphicon glyphicon-home"> Home</a></li>
+        <li class=""><a href="home.html"><span class="glyphicon glyphicon-home"> Home</a></li>
         <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="menu.php">All</a></li>
-          <li><a href="menu-pasta.php">Pasta</a></li>
-          <li><a href="menu-asiancuisine.php">Asian Cuisine</a></li>
-          <li><a href="menu-beverages.php">Beverages</a></li>
+          <li><a href="menu.html">All</a></li>
+          <li><a href="menu-pasta.html">Pasta</a></li>
+          <li><a href="menu-asiancuisine.html">Asian Cuisine</a></li>
+          <li><a href="menu-beverages.html">Beverages</a></li>
         </ul>
 <!-- 
         $count=0;
@@ -83,7 +83,7 @@
 
 
          ?> -->
-        <li class=""><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (5)</a></li>
+        <li class=""><a href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span> Cart (5)</a></li>
         
       </li>
      
@@ -93,12 +93,12 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> Account
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="account.php">Profile</a></li>
-          <li class=""><a href="history.php">Order History</a></li>
+          <li><a href="account.html">Profile</a></li>
+          <li class=""><a href="history.html">Order History</a></li>
      
         </ul>
       </li>
-      <li><a href="../login.php" onClick="return confirm('Are you sure?')">
+      <li><a href="../login.html" onClick="return confirm('Are you sure?')">
           <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
       </ul>
     </div>
@@ -143,49 +143,49 @@
                                {  
                           ?>   -->
                           <tr>
-                               <form method="post" action="purchase.php">
+                               <form method="post" action="purchase.html">
                                <!-- <td> echo $values["item_id"]; ?></td>   -->
                                <td>Blackforest Whole</td>  
                                <td>1</td>  
                                <td>RM  78.00</td>  
                                <td>RM  78.00</td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                               <td><a href="cart.html?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>  
                           <tr>
-                               <form method="post" action="purchase.php">
+                               <form method="post" action="purchase.html">
                                <!-- <td> echo $values["item_id"]; ?></td>   -->
                                <td>Aglio Olio w/ Prawn</td>  
                                <td>1</td>  
                                <td>RM  23.00</td>  
                                <td>RM  23.00</td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                               <td><a href="cart.html?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>                        
                           <tr>
-                               <form method="post" action="purchase.php">
+                               <form method="post" action="purchase.html">
                                <!-- <td> echo $values["item_id"]; ?></td>   -->
                                <td>Americano</td>  
                                <td>1</td>  
                                <td>RM  7.00</td>  
                                <td>RM  7.00</td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                               <td><a href="cart.html?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>  
                           <tr>
-                               <form method="post" action="purchase.php">
+                               <form method="post" action="purchase.html">
                                <!-- <td> echo $values["item_id"]; ?></td>   -->
                                <td>Blue Lagoon</td>  
                                <td>1</td>  
                                <td>RM  12.00</td>  
                                <td>RM  12.00</td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                               <td><a href="cart.html?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>                                                       
                           <tr>
-                               <form method="post" action="purchase.php">
+                               <form method="post" action="purchase.html">
                                <!-- <td> echo $values["item_id"]; ?></td>   -->
                                <td>Salted Caramello</td>  
                                <td>1</td>  
                                <td>RM  16.00</td>  
                                <td>RM  16.00</td>  
-                               <td><a href="cart.php?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
+                               <td><a href="cart.html?action=delete&id=echo $values[item_id]"><span class="text-danger">Cancel Order</span></a></td>  
                           </tr>                            
                           <!-- $total = $total + ($values["item_quantity"] * $values["item_price"]);  
                                }  
@@ -207,7 +207,7 @@
 
                            ?>  -->
                    
-                    <form method="post" action="cart.php">
+                    <form method="post" action="cart.html">
                 <div>
                     <label value="" readonly>Name : </label>
                     <input type="text" name="CustName" value="" hidden/>
