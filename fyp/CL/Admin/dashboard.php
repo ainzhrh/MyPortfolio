@@ -163,9 +163,9 @@ a:hover
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="menu.php">All</a></li>
-          <li><a href="../Staff/staff-pasta.php">Pasta</a></li>
-          <li><a href="../Staff/staff-asiancuisine.php">Asian Cuisine</a></li>
-          <li><a href="../Staff/staff-beverages.php">Beverages</a></li>
+          <li><a href="admin-pasta.php">Pasta</a></li>
+          <li><a href="admin-asiancuisine.php">Asian Cuisine</a></li>
+          <li><a href="admin-beverages.php">Beverages</a></li>
         </ul>
       </li>
 

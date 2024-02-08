@@ -40,7 +40,7 @@
   #navbar {
   /*   display:flex; */
 	width: 100%;
-	background-color: #25274d;
+	background-color:#25274d;
 	overflow: auto;
 	position: fixed;
 	top: 0;
@@ -60,7 +60,7 @@
   }
   
   #navbar a:hover, a:hover {
-	color: #2dbbf7;
+	color: #a572ed;
   }
   
   .active {
@@ -73,7 +73,17 @@
 	  display: block;
 	}
   }
-  
+  @keyframes ani-up-fade {
+	from {
+	  opacity: 0;
+	  margin-top: 50px;
+	}
+	
+	to {
+	  opacity: 1;
+	  margin-top: 0%;
+	}
+  } 
   #welcome-section
   {
 	display: block;
@@ -83,9 +93,9 @@
    width: 100%;
 	height: 100%;  
 	color: #25274d;
-	text-align:left;
+	text-align:center;
 	background-color: #ebecf5;
-	padding: 80px 25px;
+	padding: 250px 25px;
   
   }
 
@@ -102,7 +112,7 @@
 	color: #ebecf5;
 	text-align:center;
 	background-color: #3b3f87;
-	padding: 150px 25px;
+	padding: 100px 25px;
 	display: block;
 	max-width:100%;
 	 width: 100%;
@@ -235,10 +245,18 @@
 	font-size: 20px;
 	padding: 2rem 0.5rem;
   }
+
+  .project-tile:hover {
+	/* background: #3b3f87; */
+	color: #3b3f87;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius: 2px;
+	/* color: #ebecf5; */
+	background: #ebecf5;
+
+}
   
-  
-  
-		  .container-footer {
-		text-align: center;
-			  padding: 20px 50px;
-		  }
+.container-footer {
+text-align: center;
+	padding: 20px 50px;
+}

@@ -86,22 +86,24 @@ button
   border: none;
   outline: none;
   color: #fff;
-  background: #4791d0;
+  background: black;
   margin: auto;
   padding: 10px 30px;
   cursor: pointer;
   border-radius: 5px;
 }
 
- button:hover {
+button:hover {
     animation-name: background-color;
     animation-duration: 500ms;
     animation-fill-mode:forwards ;
+      background: black;
+
     
   }
   @keyframes background-color {
     100% {
-      background-color: #03a9f4;
+      background-color: #fed106;
     }
   }
 
@@ -150,7 +152,10 @@ a
         </div>
 
 <div align="center">
-        <button class="button" type="submit" name="register">Register</button>
+<button class="button" type="submit" name="register">Register</button>
+<br>
+<a href="login.php">Back</a><br>
+
       </div>
   </form>
     

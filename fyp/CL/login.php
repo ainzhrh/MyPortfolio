@@ -194,8 +194,8 @@ button
   background: transparent;
   border: none;
   outline: none;
-  color: #fff;
-  background: #4791d0;
+  color: black;
+  background: black;
   margin: auto;
   padding: 10px 30px;
   cursor: pointer;
@@ -206,11 +206,13 @@ button
     animation-name: background-color;
     animation-duration: 500ms;
     animation-fill-mode:forwards ;
+      background: black;
+
     
   }
   @keyframes background-color {
     100% {
-      background-color: #03a9f4;
+      background-color: #fed106;
     }
   }
 
@@ -220,6 +222,13 @@ button
 a 
 {
   color: black; 
+  text-decoration: none;
+
+}
+
+ button a
+{
+  color: white; 
   text-decoration: none;
 
 }
@@ -241,11 +250,15 @@ a
         </div>
 <br>
     <div align="center">
-    <button class="button" type="submit" name="submitlogin" ><a href="Customer/home.php">Submit Customer</a></submit></button>
-    <button class="button" type="submit" name="submitlogin" ><a href="Admin/dashboard.php">Submit Admin</a></submit></button>
-    <button class="button" type="submit" name="submitlogin" ><a href="Staff/home-staff.php">Submit Staff</a></submit></button>
-
-  </div>
+    <!-- View Customer Page -->
+    <button class="button" type="submit" name="submitlogin" ><a href="Customer/home.php">Login</a></submit></button>
+    <br>
+<!-- 
+    <br>    <button class="button" type="submit" name="submitlogin" ><a href="Admin/dashboard.php">View Admin Page</a></submit></button>
+<br>
+<br>    <button class="button" type="submit" name="submitlogin" ><a href="Staff/home-staff.php">View Staff Page</a></submit></button>
+   -->
+</div>
 
 <div align="center">
       <h3>No account?</h3> <a href="register.php">Sign up now!</a>

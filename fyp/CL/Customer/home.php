@@ -157,7 +157,7 @@ else {
 <h4>Coffeeloca</h4>
 <p>NO 25-G, JALAN SP1/1, Bandar Saujana Putra, 42610 Jenjarom, Selangor, Malaysia</p>
 
-<p>Email: enquiry@coffeeloca.com</p>
+<p>Email: ainzahirah@mailnator</p>
 
 <br>
 
