@@ -130,6 +130,12 @@
 			  font-size: 45px;
   
   }
+
+  .skills img
+  {
+	border-radius: 20%;
+
+  }
   #projects
   {
 	color: #25274d;
